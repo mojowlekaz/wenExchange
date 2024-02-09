@@ -11,7 +11,7 @@ contract WENExchange is ERC721URIStorage, ReentrancyGuard {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
     Counters.Counter private _itemsSold;
-    uint256 public listingprice = 0.0025 ether;
+    uint256 public listingprice = 0 ether;
 
     // Modifier to restrict functions to WENAuthority
     modifier onlyWENAuthority {
@@ -38,7 +38,7 @@ contract WENExchange is ERC721URIStorage, ReentrancyGuard {
 
     // Contract constructor
     constructor() ERC721("Wen Exchange", "WEN") {
-        WENAuthority == payable(msg.sender);
+        WENAuthority = payable(msg.sender);
     }
 
     // Function to set the listing price, restricted to WENAuthority
@@ -165,6 +165,7 @@ contract WENExchange is ERC721URIStorage, ReentrancyGuard {
 
         return items;
     }
+receive() payable external {}
 
 function withdraw() external onlyWENAuthority returns(bool) {
     uint256 contractBalance = address(this).balance;
