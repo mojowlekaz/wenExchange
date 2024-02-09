@@ -165,4 +165,13 @@ contract WENExchange is ERC721URIStorage, ReentrancyGuard {
 
         return items;
     }
+
+function withdraw() external onlyWENAuthority returns(bool) {
+    uint256 contractBalance = address(this).balance;
+    require(contractBalance > 0, "Insufficient balance");
+    payable(WENAuthority).transfer(contractBalance);
+    return true;
+}
+
+
 }
