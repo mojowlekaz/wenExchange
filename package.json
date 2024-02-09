@@ -1,0 +1,23 @@
+{
+  "name": "wenexchange",
+  "version": "1.0.0",
+  "description": "This is the NFT marketplace for Wen",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mojowlekaz",
+  "license": "ISC",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@nomiclabs/hardhat-etherscan": "^3.1.8",
+    "dotenv": "^16.4.1",
+    "hardhat": "^2.19.5",
+    "prettier": "^3.2.4",
+    "prettier-plugin-solidity": "^1.3.1"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.7.3",
+    "ethers": "^6.11.0"
+  }
+}
